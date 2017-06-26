@@ -1,4 +1,4 @@
-# Photonic Crystals
+# Photonics Visual
 
 Program for visualizing of the results obtained from https://github.com/AleksandrRogachev94/photonic-crystals.
 
