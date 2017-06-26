@@ -1,0 +1,343 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INFO DIALOG  0, 0, 484, 361
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Information about the crystal"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,201,333,65,17
+    LTEXT           "The layers and their depths in nm.:",IDC_STATIC,20,105,114,8
+    LTEXT           "Wavelength of the incident light (nm):",IDC_STATIC,20,204,120,10
+    EDITTEXT        IDC_WLENGH,167,202,40,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Angle of incidence, deg. (to the normal):",IDC_STATIC,20,220,133,12
+    EDITTEXT        IDC_ANGLE,167,219,40,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Type of the polarization of the wave:",IDC_STATIC,20,237,122,8
+    EDITTEXT        IDC_POL,167,236,39,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Number of positive and negative harmonics:",IDC_STATIC,20,255,146,8
+    EDITTEXT        IDC_HARMS,167,254,39,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Permittivity of input medium:",IDC_STATIC,19,273,91,8
+    EDITTEXT        IDC_EPS_INC,167,271,39,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Permittivity of output medium:",IDC_STATIC,19,289,96,8
+    EDITTEXT        IDC_EPS_OUT,167,287,39,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Materials which are used in the crystal with their permittivity and symbols:",IDC_STATIC,20,12,230,10
+    LISTBOX         IDC_LIST_MATTER,20,30,445,59,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_LAYERS,20,121,445,59,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Sampling step (nm):",IDC_STATIC,20,306,65,8
+    EDITTEXT        IDC_DZ,167,305,39,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Period of the crystal (nm):",IDC_STATIC,20,189,85,10
+    EDITTEXT        IDC_PERIOD,167,186,40,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_CNTRL_MAIN DIALOGEX 0, 0, 824, 40
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_AMPNORM,18,14,44,14,ES_AUTOHSCROLL
+    LTEXT           "Ampl. norm.",IDC_STATIC,19,3,40,8
+    PUSHBUTTON      "-",IDC_AMPNORM_M,3,21,14,10
+    PUSHBUTTON      "+",IDC_AMPNORM_P,3,11,14,10
+    COMBOBOX        IDC_TYPE_DRAW,88,15,116,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Draw according to the scale",IDC_RADIO_ACCORD_SCALE,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,208,12,108,9
+    CONTROL         "Draw on full screen",IDC_RADIO_FSCREEN,"Button",BS_AUTORADIOBUTTON,208,22,75,10
+    PUSHBUTTON      "OK",IDC_AMPNORM_OK,62,14,23,13
+    LTEXT           "Field/Component/Value:",IDC_STATIC,89,3,81,8
+    LTEXT           "Scaling:",IDC_STATIC,209,3,26,8
+    CONTROL         "Fields Distribution",IDC_RADIO_IMG_FIELDS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,315,13,69,8
+    CONTROL         "Crystal Geometry",IDC_RADIO_IMG_CRYSTAL,"Button",BS_AUTORADIOBUTTON,315,22,70,10
+    LTEXT           "Image:",IDC_STATIC,317,3,24,8
+    CONTROL         "Grid",IDC_CHECK_GRID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,349,3,30,10
+    COMBOBOX        IDC_COMBO_OPEN_FILE,700,18,123,224,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Open File:",IDC_STATIC,701,6,36,8
+    PUSHBUTTON      "Fill List of Files",IDC_UPDATE_DIR,764,4,58,11
+    PUSHBUTTON      "Redraw",IDC_REDRAW_IMAGE,272,1,37,11
+    EDITTEXT        IDC_COOR_X,435,5,50,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_COOR_Z,488,5,50,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "X,Z (nm):",IDC_STATIC,400,6,30,8
+    EDITTEXT        IDC_VAL_A,435,19,50,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_VAL_B,488,19,50,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Values:",IDC_NAME_VALUES,398,20,31,8,NOT WS_GROUP
+    EDITTEXT        IDC_COOR_X_1,579,9,32,13,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_TABSTOP
+    GROUPBOX        "Distribution along the line",IDC_STATIC,543,0,152,40
+    EDITTEXT        IDC_COOR_Z_1,614,9,32,13,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_TABSTOP
+    PUSHBUTTON      "write in file",IDB_WRITE_DISTR,649,24,42,12
+    LTEXT           "X,Z (nm):",IDC_STATIC,546,11,30,8
+    EDITTEXT        IDC_COOR_X_2,579,24,32,13,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_TABSTOP
+    EDITTEXT        IDC_COOR_Z_2,614,24,32,13,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_TABSTOP
+    LTEXT           "X,Z (nm):",IDC_STATIC,546,25,30,8
+    EDITTEXT        IDC_DISTR_STEP,667,10,23,11,ES_AUTOHSCROLL
+    LTEXT           "Step",IDC_STATIC,650,11,14,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 20
+        RIGHTMARGIN, 477
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 322
+        HORZGUIDE, 324
+    END
+
+    IDD_CNTRL_MAIN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 730
+        BOTTOMMARGIN, 38
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904b0"
+        BEGIN
+            VALUE "Comments", "Program for Visualisation of Results of Computations of Fields Inside Photonic Crystals"
+            VALUE "CompanyName", "Rogachev A.E."
+            VALUE "FileDescription", "Visualisation of Fields in Photonic Crystals"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Photonics_Visual"
+            VALUE "LegalCopyright", "Copyright © 2014"
+            VALUE "OriginalFilename", "Photonics_Visual.exe"
+            VALUE "ProductName", "Photonics_Visual"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1200
+    END
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 239, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Photonics_Visual"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Photonics_Visual, Version 1.0",IDC_STATIC,80,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2014",IDC_STATIC,79,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,95,85,50,14,WS_GROUP
+    LTEXT           "This program was created for the visualisation of results only.\nFor computations please use main program ""Photonics""",IDC_STATIC,16,55,214,26
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PHOTONICS_VISUAL    ICON                    "Photonics_Visual.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_PHOTONICS_VISUAL MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Info",                        IDM_INFO
+        MENUITEM "Read Angl. Disp. T.",         IDM_READANGLDISP_T
+        MENUITEM "Read Angl. Disp. R.",         IDM_READANGLDISP_R
+        MENUITEM "Read Angl. Disp. A.",         IDM_READANGLDISP_A
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_PHOTONICS_VISUAL ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "Photonics_Visual"
+    IDS_Typ_E_FullField     "'E'-Field (Module)"
+    IDS_Typ_HxField         "'Hx'-Field"
+    IDS_Typ_ExField         "'Ex'-Field"
+    IDS_Typ_EyField         "'Ey'-Field"
+    IDS_Typ_EzField         "'Ez'-Field"
+    IDC_PHOTONICS_VISUAL    "PHOTONICS_VISUAL"
+    IDS_Typ_HyField         "'Hy'-Field"
+    IDS_Typ_HzField         "'Hz'-Field"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_Typ_H_FullField     "'H'-Field (Module)"
+    IDS_Err_Write           "Incorrect input data of errror in computations !"
+    IDS_Typ_SqE             "Square of E-Field"
+    IDS_Typ_SqH             "Square of H-Field"
+    IDS_Typ_PoyntDiv        "-div(Poynting Vector)"
+    IDS_Typ_EvEc            "Im([ExE*])"
+    IDS_Typ_HvHc            "Im([HxH*])"
+    IDS_Typ_PoyntX          "Poynting Vect. X-comp."
+    IDS_Typ_PoyntZ          "Poynting Vect. Z-comp."
+    IDS_Typ_PoyntAbs        "Poynting Vector (Module)"
+    IDS_Typ_EImE2           "Power of Losses"
+    IDS_Typ_ReEps           "Eps' (real part)"
+    IDS_Typ_ImEps           "Eps"" (imaginary part)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
